@@ -301,7 +301,18 @@ public final class MappedStatement {
     return resultSets;
   }
 
+  /**
+   * 获取绑定sql
+   * @param parameterObject
+   * @return
+   */
   public BoundSql getBoundSql(Object parameterObject) {
+    /**
+     * sql分为 DynamicSqlSource  和 StaticSqlSource
+     *
+     *  DynamicSqlSource会解析if，foreach标签
+     *
+     */
     BoundSql boundSql = sqlSource.getBoundSql(parameterObject);
     List<ParameterMapping> parameterMappings = boundSql.getParameterMappings();
     if (parameterMappings == null || parameterMappings.isEmpty()) {
