@@ -16,6 +16,7 @@
 package org.apache.ibatis.session;
 
 /**
+ * 此类的作用是进行逻辑分页，在内存分页
  * @author Clinton Begin
  */
 public class RowBounds {

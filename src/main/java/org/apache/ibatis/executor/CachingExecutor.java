@@ -38,6 +38,7 @@ import org.apache.ibatis.transaction.Transaction;
  */
 public class CachingExecutor implements Executor {
 
+  //真实应为 target，目标对象.  delegate可以理解为 被代理对象
   private final Executor delegate;
   private final TransactionalCacheManager tcm = new TransactionalCacheManager();
 
